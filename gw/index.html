@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Gateway webservices consumption</title>
+        
+        <script id="sap-ui-bootstrap"
+        src="resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m"
+        data-sap-ui-theme="sap_bluecrystal"
+        data-sap-ui-xx-bindingSyntax="complex" //set up the extended syntax for calculated fields in property bindings 
+        data-sap-ui-resourceroots='{
+            "sap.m.gw": "./"
+        }'>
+        </script>
+
+        <script>
+            sap.ui.getCore().attachInit(function() { //Attaches a given function to the initEvent event of the core. Starts the application
+                new sap.m.Shell({
+                    title: "Title of a SHELL",
+                    app: new sap.ui.core.ComponentContainer({
+                        height : "100%",
+                        name : "sap.m.gw"
+                    })
+                }).placeAt("content");
+            });
+        </script>
+    </head>
+    
+    <body class="sapUiBody" id="content" /> 
+    <!--We use it in body, not in child <div> -->
+
+    
+</html>
